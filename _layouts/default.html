@@ -15,12 +15,15 @@
         </section>
       </div>
     </header>
+
+    <main class="mdc-toolbar-fixed-adjust">
+      {{ content }}
+    </main>
     <ul>
       {% for post in site.posts %}
         <li>{{ post.title }}</li>
       {% endfor %}
     </ul>
 
-    {{ content }}
   </body>
 </html>

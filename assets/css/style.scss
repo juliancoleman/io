@@ -15,7 +15,7 @@ code {
 }
 
 .mdc-toolbar__row:first-child::after {
-  background-image: url("{{ site.baseUrl }}/assets/images/4-3.jpg");
+  background-image: url("{{ site.baseUrl }}/assets/images/splash.jpg");
   background-size: cover;
   background-position: center;
 }

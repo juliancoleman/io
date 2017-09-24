@@ -31,7 +31,7 @@
           <div class="mdc-list-divider"></div>
           <nav class="mdc-list">
             {% for post in site.posts %}
-              <a href="#" class="mdc-list-item">{{ post.title }}</a>
+              <a href="{{ post.url }}" class="mdc-list-item">{{ post.title }}</a>
             {% endfor %}
           </nav>
         </div>

@@ -8,10 +8,10 @@
 code {
   font-family: monospace;
   display: inline-block;
-  padding: 1px 4px;
+  padding: inherit 3px;
   color: #a00;
   border-radius: 8px;
-  background-color: #ececec;
+  background-color: #fdfdfd;
 }
 
 .mdc-toolbar__row:first-child::after {

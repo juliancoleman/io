@@ -11,8 +11,15 @@
   background-position: center;
 }
 
-#editllc {
-  background-image: url("{{ site.baseUrl }}/assets/images/editllc.jpeg");
+#editllc, #shift3, #spacebartech {
   background-size: cover;
   background-position: center;
+}
+
+#editllc {
+  background-image: url("{{ site.baseUrl }}/assets/images/editllc.jpeg");
+}
+
+#shift3 {
+  background-image: url("{{ site.baseUrl }}/assets/images/shift3.png");
 }

@@ -31,6 +31,11 @@
       <nav class="mdc-permanent-drawer">
         <div class="mdc-list-group">
           <nav class="mdc-list">
+            <a href="http://jcoleman.engineering" class="mdc-list-item">Engineering</a>
+            <a href="http://jcoleman.photography" class="mdc-list-item">Photography</a>
+          </nav>
+          <div class="mdc-divider"></div>
+          <nav class="mdc-list">
             {% for post in site.posts %}
               <a href="#" class="mdc-list-item">{{ post.title }}</a>
             {% endfor %}

@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="mdc-typography">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
     <title>{{ page.title | site.title }}</title>
   </head>
   <body>
-    <header>
-      <h1>{{ page.title }}</h1>
+    <header class="mdc-layout-grid">
+      <div class="mdc-layout-grid__inner">
+        <h1 class="mdc-typography--display3 mdc-layout-cell__4">{{ page.title }}</h1>
+      </div>
     </header>
     <ul>
       {% for post in site.posts %}

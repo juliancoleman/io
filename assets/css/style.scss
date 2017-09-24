@@ -5,6 +5,13 @@
   font-family: 'Roboto', sans-serif;
 }
 
+code {
+  font-family: monospace;
+  display: inline-block;
+  padding: 4px;
+  background-color: #cecece;
+}
+
 .mdc-toolbar__row:first-child::after {
   background-image: url("{{ site.baseUrl }}/assets/images/4-3.jpg");
   background-size: cover;

@@ -11,8 +11,8 @@
     <title>{{ page.title | site.title }}</title>
   </head>
   <body style="display: flex; flex-direction: column; padding: 0; margin: 0; box-sizing: border-box; min-height: 100vh;">
-    <header class="mdc-toolbar mdc-toolbar--fixed">
-      <div class="mdc-toolbar__row">
+    <header class="mdc-toolbar mdc-toolbar--fixed mdc-toolbar--waterfall mdc-toolbar--flexible mdc-toolbar--flexible-default-behavior mdc-toolbar--flexible-space-maximized">
+      <div class="mdc-toolbar__row" style="height: 256px;">
         <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
           <span class="mdc-toolbar__title">{{ site.title }}</span>
         </section>
@@ -34,5 +34,28 @@
         {{ content }}
       </div>
     </main>
+
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script>
+      (function () {
+        var pollId = 0;
+        pollId = setInterval(function () {
+          var pos = getComputedStyle(document.querySelector('.mdc-toolbar')).position;
+          if (pos === 'fixed' || pos === 'relative') {
+            init();
+            clearInterval(pollId);
+          }
+        }, 250);
+        function init() {
+          var ratioSpan = document.querySelector("#ratio");
+          var toolbar = mdc.toolbar.MDCToolbar.attachTo(document.querySelector('.mdc-toolbar'));
+          toolbar.listen('MDCToolbar:change', function (evt) {
+            var flexibleExpansionRatio = evt.detail.flexibleExpansionRatio;
+            ratioSpan.innerHTML = flexibleExpansionRatio.toFixed(2);
+          });
+          toolbar.fixedAdjustElement = document.querySelector('.mdc-toolbar-fixed-adjust');
+        }
+      })();
+    </script>
   </body>
 </html>

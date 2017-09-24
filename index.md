@@ -1,5 +1,5 @@
 ---
-title: index
+title: jcoleman.io
 ---
 
 ### jcoleman.io

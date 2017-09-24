@@ -4,3 +4,15 @@
 * {
   font-family: 'Roboto', sans-serif;
 }
+
+.mdc-toolbar__row:first-child::after {
+  background-image: url("{{ site.baseUrl }}/assets/images/4-3.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#editllc {
+  background-image: url("{{ site.baseUrl }}/assets/images/editllc.jpeg");
+  background-size: cover;
+  background-position: center;
+}

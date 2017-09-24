@@ -16,10 +16,28 @@
     <header class="mdc-toolbar mdc-toolbar--fixed mdc-toolbar--waterfall mdc-toolbar--flexible mdc-toolbar--flexible-default-behavior mdc-toolbar--flexible-space-maximized">
       <div class="mdc-toolbar__row" style="height: 256px;">
         <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+          <button class="demo-menu material-icons mdc-toolbar__icon--menu">menu</button>
           <span class="mdc-toolbar__title"><a href="http://jcoleman.io" style="color: white; text-decoration: none;">{{ site.title }}</a></span>
         </section>
       </div>
     </header>
+
+    <aside class="mdc-temporary-drawer">
+      <nav class="mdc-temporary-drawer__drawer">
+        <nav class="mdc-list-group">
+          <div class="mdc-list">
+            <a href="http://jcoleman.engineering" class="mdc-list-item">.engineering</a>
+            <a href="http://jcoleman.photography" class="mdc-list-item">.photography</a>
+          </div>
+          <div class="mdc-list-divider"></div>
+          <div class="mdc-list">
+            {% for post in site.posts %}
+              <a href="{{ post.url }}" class="mdc-list-item">{{ post.title }}</a>
+            {% endfor %}
+          </div>
+        </nav>
+      </nav>
+    </aside>
 
     <main class="mdc-toolbar-fixed-adjust" style="display: flex; flex: 1 1 auto; height: 100%; box-sizing: border-box;">
       <nav class="mdc-permanent-drawer">
@@ -46,6 +64,14 @@
     <script>
       (function () {
         var pollId = 0;
+        var drawerEl = document.querySelector('.mdc-temporary-drawer');
+        var MDCTemporaryDrawer = mdc.drawer.MDCTemporaryDrawer;
+        var drawer = new MDCTemporaryDrawer(drawerEl);
+
+        document.querySelector('.demo-menu').addEventListener('click', function () {
+          drawer.open = true;
+        });
+
         pollId = setInterval(function () {
           var pos = getComputedStyle(document.querySelector('.mdc-toolbar')).position;
           if (pos === 'fixed' || pos === 'relative') {
@@ -58,6 +84,7 @@
           toolbar.fixedAdjustElement = document.querySelector('.mdc-toolbar-fixed-adjust');
         }
       })();
+
     </script>
   </body>
 </html>

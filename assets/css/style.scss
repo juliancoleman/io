@@ -40,3 +40,13 @@ code {
 #shift3 {
   background-image: url("{{ site.baseUrl }}/assets/images/shift3.jpg");
 }
+
+@media screen and (max-width: 680px) {
+  .demo-menu, #drawer-show-on-mobile {
+    visibility: visible;
+  }
+
+  #drawer-show-on-tablet-desktop {
+    display: none;
+  }
+}

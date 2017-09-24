@@ -8,9 +8,11 @@
     <title>{{ page.title | site.title }}</title>
   </head>
   <body>
-    <header class="mdc-layout-grid">
-      <div class="mdc-layout-grid__inner">
-        <h1 class="mdc-typography--display3 mdc-layout-cell__4">{{ page.title }}</h1>
+    <header class="mdc-toolbar">
+      <div class="mdc-toolbar__row">
+        <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+          <span class="mdc-toolbar__title">{{ site.title }}</span>
+        </section>
       </div>
     </header>
     <ul>

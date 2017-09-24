@@ -42,11 +42,13 @@ code {
 }
 
 @media screen and (max-width: 680px) {
-  .demo-menu, #drawer-show-on-mobile {
-    visibility: visible;
-  }
-
   #drawer-show-on-tablet-desktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 681px) {
+  .demo-menu {
     display: none;
   }
 }

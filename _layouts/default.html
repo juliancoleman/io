@@ -11,20 +11,6 @@
     <title>{{ page.title | site.title }}</title>
   </head>
   <body>
-    <nav class="mdc-permanent-drawer mdc-typography">
-      <div class="mdc-permanent-drawer__content">
-        <nav id="icon-with-text-demo" class="mdc-list">
-          <a class="mdc-list-item mdc-permanent-drawer--selected" href="#">
-            <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">inbox</i>Inbox
-          </a>
-
-          <a class="mdc-list-item" href="#">
-            <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">star</i>Star
-          </a>
-        </nav>
-      </div>
-    </nav>
-
     <header class="mdc-toolbar mdc-toolbar--fixed">
       <div class="mdc-toolbar__row">
         <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
@@ -34,13 +20,17 @@
     </header>
 
     <main class="mdc-toolbar-fixed-adjust">
+      <nav class="mdc-permanent-drawer">
+        <div class="mdc-list-group">
+          <nav class="mdc-list">
+            {% for post in site.posts %}
+              <a href="#" class="mdc-list-item">{{ post.title }}</a>
+            {% endfor %}
+          </nav>
+        </div>
+      </nav>
+
       {{ content }}
     </main>
-    <ul>
-      {% for post in site.posts %}
-        <li>{{ post.title }}</li>
-      {% endfor %}
-    </ul>
-
   </body>
 </html>

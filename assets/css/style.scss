@@ -28,19 +28,6 @@ code {
   max-width: 1160px;
 }
 
-#editllc, #shift3, #spacebartech {
-  background-size: cover;
-  background-position: center;
-}
-
-#editllc {
-  background-image: url("{{ site.baseUrl }}/assets/images/editllc.jpeg");
-}
-
-#shift3 {
-  background-image: url("{{ site.baseUrl }}/assets/images/shift3.jpg");
-}
-
 @media screen and (max-width: 680px) {
   #drawer-show-on-tablet-desktop {
     display: none;
